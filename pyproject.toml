@@ -1,0 +1,28 @@
+[project]
+name = "openshift-mcp-client"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sanjay Sachdev", email = "sasachde@redhat.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "gradio>=5.0.0",
+    "mcp>=1.19.0,<3",
+    "openai-agents>=0.23.1",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+openshift-mcp-client = "openshift_mcp_client.main:main"
+openshift-mcp-ui = "openshift_mcp_client.ui:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.14"
