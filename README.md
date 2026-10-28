@@ -117,11 +117,7 @@ uv run python -m unittest discover -s tests
 
 ## Possible future enhancements
 
-- Reload the model endpoint and MCP connection from the UI, so a `.env` change does not require a process restart.
-- Let a stdio server take a working directory and extra environment variables, such as `KUBECONFIG` or an OpenShift context.
-- Support a question that needs more than one tool call, and show each call in the transcript as it finishes.
-- Show the tool name and arguments that ran. Ask for confirmation before a tool that deletes, applies, or scales.
-- Keep chat history when the UI restarts, and allow more than one conversation.
-- Stream the assistant reply instead of waiting for the full summary.
-- Treat a failed tool result as an error before the summary model rewrites it.
-- Add an optional integration test that connects to the configured server and calls one read-only tool.
+- Multi-tenant chat, so each user has a separate conversation, history, and cluster access.
+- A container image, with Docker Compose for a local run and an OpenShift deployment for a cluster.
+- Sign-in in front of the UI, so a shared deployment is not one local session.
+- Per-tenant model endpoint and MCP server settings.
